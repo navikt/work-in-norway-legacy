@@ -12,25 +12,18 @@ app.get('/internal/isReady', (req, res) => {
 });
 
 app.get('*', async (req, res) => {
-    const html = await fetch(`${process.env.CMS_SITE_URL}${req.url}`)
-        .then((res) => {
-            if (res.ok) {
-                return res.text();
-            }
-            console.log(`Error:`, res);
+    const response = await fetch(`${process.env.CMS_SITE_URL}${req.url}`);
 
-            throw new Error(res.statusText);
-        })
-        .then((html) => html.replaceAll(process.env.CMS_SITE_URL, ''))
-        .catch((e) => {
-            return e;
-        });
+    const finalText = await response
+        .text()
+        .then((text) => text.replaceAll(process.env.CMS_SITE_URL, ''));
 
-    console.log(
-        `Requested ${req.url} from ${process.env.CMS_SITE_URL} - ${html}`
-    );
+    const contentType = response.headers.get('content-type') || '';
+    res.setHeader('content-type', contentType);
 
-    res.status(200).send(html);
+    console.log(`Requested ${req.url} from ${process.env.CMS_SITE_URL}`);
+
+    res.status(200).send(finalText);
 });
 
 const server = app.listen(appPort, () => {
