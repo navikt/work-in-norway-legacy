@@ -6,7 +6,7 @@
   "module": "es",
   "scripts": {
     "build": "rm -fr distSrc && tsc",
-    "dev": "npm run build && node -r dotenv/config distSrc/server.js",
+    "dev": "npm run build && node -r dotenv/config distSrc/src/server.js",
     "start": "node distSrc/server.js"
   },
   "dependencies": {

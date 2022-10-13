@@ -1,0 +1,397 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section{
+  display:block;
+}
+
+html{
+  font-size:100%;
+  -webkit-text-size-adjust:100%;
+  -ms-text-size-adjust:100%;
+}
+
+button,
+input,
+select,
+textarea{
+  margin:0;
+  font-size:100%;
+  vertical-align:middle;
+}
+
+button,
+input{
+  /*overflow: visible; */
+  line-height:normal;
+}
+
+button::-moz-focus-inner,
+
+input::-moz-focus-inner{
+  padding:0;
+  border:0;
+}
+
+button,
+html input[type = "button"],
+input[type = "reset"],
+input[type = "submit"]{
+  -webkit-appearance:button;
+  cursor:pointer;
+}
+
+input[type = "search"]{
+  -webkit-box-sizing:content-box;
+  -moz-box-sizing:content-box;
+  box-sizing:content-box;
+  -webkit-appearance:textfield;
+}
+
+input[type = "search"]::-webkit-search-decoration,
+input[type = "search"]::-webkit-search-cancel-button{
+
+  -webkit-appearance:none;
+}
+
+a,
+p,
+span,
+li{
+  font-family:ModusRegular;
+  text-decoration:none;
+  color:#675c53;
+  margin:0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+label{
+  margin-top:0;
+  font-family:ModusBold
+}
+
+textarea{
+  overflow:auto;
+  vertical-align:top;
+}
+
+#content{
+  min-height:100%;
+  height:auto !important;
+  height:100%;
+  margin:0 auto -60px;
+}
+
+.group:after,
+.container:after{
+  content:"\0020";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+  overflow:hidden;
+}
+
+.group{
+  display:block;
+}
+
+.clear {
+  clear:both;
+}
+
+* html .group{
+  height:1%;
+}
+
+/*----------------------------------------------------------------------
+
+*
+
+*Sidestruktur: Grid 940px 14px margin
+
+*---------------------------------------------------------------------------*/
+
+html,
+body {
+  height:100%;
+  margin:0;
+}
+
+body {
+  background: #FFF;
+  background-size:100%;
+  z-index:-1;
+}
+
+a img{
+  border:none;
+}
+
+body > .container{
+  height:auto;
+  min-height:100%
+}
+.container{
+  margin:0 auto;
+  width:1080px;
+  position:relative;
+  height:100%;
+}
+
+.article-container{
+  width:664px !important;
+  float:left;
+}
+.tips-container{
+  width:333px !important;
+  float:left;
+}
+
+.article{
+  display:block;
+  background:#FFFFFF;
+  margin:30px 12px 14px 0px;
+  padding:16px;
+}
+
+.article-tips{
+  background:#dfded7 !important;
+}
+
+.article p,
+h1,
+h2,
+h3,
+h4{
+  margin:0;
+  color:#675c53 !important;
+}
+.article li{
+  color:#675c53 !important;
+}
+.article a{
+  text-decoration:none;
+  color:#007FFF !important;
+}
+article a:active{
+
+}
+
+.article h1{
+  color:#675c53;
+  display:block;
+  margin:0 0 12px 0;
+  ;
+}
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4,
+.grid-5{
+  float:left;
+}
+
+.grid-1{
+  width:145px;
+}
+
+.grid-2{
+  width:323px;
+}
+
+.grid-3{
+  width:463px;
+}
+
+.grid-4{
+  width:658px;
+  overflow:hidden
+}
+
+.grid-5{
+  width:680px;
+  margin-left:6px;
+}
+
+.grid-6,
+div.grid-6{
+  width:940px;
+  float:left;
+  margin:0;
+  overflow:hidden
+}
+
+/*---------------------------------------------------------------------------------------------
+*
+
+* Navigation
+
+*----------------------------------------------------------------------------------------------*/
+
+
+
+#accessibility-shortcuts{
+  position:absolute;
+  left:-9999px;
+  top:-200px;
+}
+
+
+@font-face{
+
+  font-family:'ModusAltBoldItalic';
+  src:url('font/modabit_-webfont.eot');
+  src:url('font/modabit_-webfont.eot?#iefix') format('embedded-opentype'), url('font/modabit_-webfont.woff') format('woff'), url('font/modabit_-webfont.ttf') format('truetype'), url('font/modabit_-webfont.svg#ModusAltBoldItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusAltItalic';
+  src:url('font/modait__-webfont.eot');
+  src:url('font/modait__-webfont.eot?#iefix') format('embedded-opentype'), url('font/modait__-webfont.woff') format('woff'), url('font/modait__-webfont.ttf') format('truetype'), url('font/modait__-webfont.svg#ModusAltItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusAltSemiBoldItalic';
+  src:url('font/modasbit-webfont.eot');
+  src:url('font/modasbit-webfont.eot?#iefix') format('embedded-opentype'), url('font/modasbit-webfont.woff') format('woff'), url('font/modasbit-webfont.ttf') format('truetype'), url('font/modasbit-webfont.svg#ModusAltSemiBoldItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusBoldItalic';
+  src:url('font/modbit__-webfont.eot');
+  src:url('font/modbit__-webfont.eot?#iefix') format('embedded-opentype'), url('font/modbit__-webfont.woff') format('woff'), url('font/modbit__-webfont.ttf') format('truetype'), url('font/modbit__-webfont.svg#ModusBoldItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusItalic';
+  src:url('font/modit___-webfont.eot');
+  src:url('font/modit___-webfont.eot?#iefix') format('embedded-opentype'), url('font/modit___-webfont.woff') format('woff'), url('font/modit___-webfont.ttf') format('truetype'), url('font/modit___-webfont.svg#ModusItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+  font-family:'ModusSemiBoldItalic';
+  src:url('font/modsbit-webfont.eot');
+  src:url('font/modsbit-webfont.eot?#iefix') format('embedded-opentype'), url('font/modsbit-webfont.woff') format('woff'), url('font/modsbit-webfont.ttf') format('truetype'), url('font/modsbit-webfont.svg#ModusSemiBoldItalic') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusExtraBold';
+  src:url('font/modueb__-webfont.eot');
+  src:url('font/modueb__-webfont.eot?#iefix') format('embedded-opentype'), url('font/modueb__-webfont.woff') format('woff'), url('font/modueb__-webfont.ttf') format('truetype'), url('font/modueb__-webfont.svg#ModusExtraBold') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+  font-family:'ModusBold';
+  src:url('font/modub___-webfont.eot');
+  src:url('font/modub___-webfont.eot?#iefix') format('embedded-opentype'), url('font/modub___-webfont.woff') format('woff'), url('font/modub___-webfont.ttf') format('truetype'), url('font/modub___-webfont.svg#ModusBold') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusLight';
+  src:url('font/modul___-webfont.eot');
+  src:url('font/modul___-webfont.eot?#iefix') format('embedded-opentype'), url('font/modul___-webfont.woff') format('woff'), url('font/modul___-webfont.ttf') format('truetype'), url('font/modul___-webfont.svg#ModusLight') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusRegular';
+  src:url('font/modurg__-webfont.eot');
+  src:url('font/modurg__-webfont.eot?#iefix') format('embedded-opentype'), url('font/modurg__-webfont.woff') format('woff'), url('font/modurg__-webfont.ttf') format('truetype'), url('font/modurg__-webfont.svg#ModusRegular') format('svg');
+  font-weight:400;
+  font-style:normal
+
+
+}
+
+@font-face{
+
+  font-family:'ModusSemiBold';
+  src:url('font/modusb__-webfont.eot');
+  src:url('font/modusb__-webfont.eot?#iefix') format('embedded-opentype'), url('font/modusb__-webfont.woff') format('woff'), url('font/modusb__-webfont.ttf') format('truetype'), url('font/modusb__-webfont.svg#') format('svg');
+  font-weight:400;
+  font-style:normal
+}
+
+
+.top-menu{
+  position:relative;
+  width:959px;
+  height:800px;
+  background:#fff;
+  box-shadow: 0px 30px 60px -2px rgba(0, 0, 0, 0.25);
+  padding:30px;
+  margin-bottom:70px;
+  margin-top: 20px;
+}
+
+.top-menu > img {
+  float: left;
+  display: inline-block;
+  margin: 0 20px 0 20px
+}
+
+.top-menu > h1 {
+  margin: 6px 0 40px 0;
+  font-size: 40px;
+  border-bottom:2px solid rgba(105, 105, 105, 0.3);
+  padding-bottom: 12px;
+  display: block;
+}
+
+
+

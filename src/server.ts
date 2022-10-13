@@ -3,6 +3,8 @@ import express from 'express';
 const app = express();
 const appPort = 4090;
 
+const staticPath = `${process.cwd()}/static`;
+
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
 });
@@ -10,6 +12,8 @@ app.get('/internal/isAlive', (req, res) => {
 app.get('/internal/isReady', (req, res) => {
     return res.status(200).send('I am ready!');
 });
+
+app.use('/', express.static(staticPath));
 
 app.get('*', async (req, res) => {
     const response = await fetch(`${process.env.CMS_SITE_URL}${req.url}`);

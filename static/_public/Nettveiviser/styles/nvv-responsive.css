@@ -1,0 +1,576 @@
+/** Frontpage */
+/** Titles */
+/** Colors */
+.bluelink {
+  text-decoration: none;
+  color: #007fff;
+}
+.bluelink:hover {
+  text-decoration: underline;
+}
+/* Generell CSS-kode */
+@font-face {
+  font-family: "Modus";
+  font-weight: normal;
+  font-style: normal;
+  src: url("font/modus/modurg-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Modus";
+  font-weight: 600;
+  font-style: normal;
+  src: url("font/modus/modusb-semibold.woff") format("woff");
+}
+@font-face {
+  font-family: "Modus";
+  font-weight: bold;
+  font-style: normal;
+  src: url("font/modus/modub-bold.woff") format("woff");
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Modus, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #675c53;
+}
+html {
+  font-family: Modus, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: #675c53;
+  margin: 0;
+}
+.article p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: #675c53;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+body {
+  background-color: #efefef;
+}
+a,
+p,
+span,
+li,
+li span {
+  line-height: 24px;
+}
+/** Frittstående klasser */
+.highlighted {
+  color: #c30000;
+}
+.selected h2,
+.selected a {
+  color: #fff !important;
+}
+.underline-header {
+  background: transparent url(../bilder/dotted-line-lrg.gif) repeat-x left bottom;
+  padding-bottom: 1rem;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.selected-arrow {
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+.selected-arrow.arrow-over {
+  display: none;
+}
+.selected-arrow.arrow-under {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 11px solid #c30000;
+  left: 50%;
+  margin-left: -10px;
+  bottom: -10px;
+  z-index: 1;
+}
+/** Hoved - undermeny */
+.menu-box {
+  position: relative;
+  background-color: #dfded7;
+  padding: 1.5rem 1rem;
+  color: #48403a;
+  text-align: center;
+}
+.menu-box h2 {
+  font-size: 1.2rem;
+}
+.menu-box.selected {
+  background-color: #c30000;
+  color: #fff;
+}
+/** 1, 2 3 meny */
+.navbox .box {
+  color: #48403a;
+  background-color: #dfded7;
+  padding: 1.5rem 1rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbox .box.selected {
+  color: white;
+  background-color: #c30000;
+}
+.navbox .selected-arrow {
+  display: none;
+}
+/** Venstremeny */
+.aside-tabs {
+  margin: 0 10px 10px 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+.aside-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.aside-list li {
+  padding: 0;
+  margin: 0;
+}
+.aside-list li {
+  margin-bottom: 10px;
+}
+.aside-list li:last-child {
+  margin-bottom: 0;
+}
+.aside-list li.selected a {
+  background-color: #c30000;
+  color: #fff;
+}
+.aside-list a {
+  display: block;
+  background-color: #dfded7;
+  padding: 1.5rem 1rem;
+  color: #48403a;
+}
+.aside-list h2 {
+  font-size: 1rem;
+}
+#top-section {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+}
+#top-section h1 {
+  color: #fff;
+}
+#top-section a {
+  color: #fff;
+  text-decoration: none;
+}
+#top-section a:hover,
+#top-section a:focus {
+  text-decoration: underline;
+}
+a[title="home"] {
+  display: block;
+}
+.page-header {
+  position: relative;
+  margin-right: 30%;
+}
+.page-header img {
+  position: absolute;
+  height: 35px;
+}
+.page-header h1 {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-weight: normal;
+  min-width: 9em;
+  margin: -5px 0 0 45px;
+}
+#languages,
+#about-site {
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+}
+#about-site {
+  top: 13px;
+  white-space: nowrap;
+  float: right;
+}
+#about-site a {
+  padding-bottom: 5px;
+}
+#languages {
+  top: 37px;
+  float: right;
+  display: block;
+}
+#languages a {
+  position: relative;
+  display: block;
+  float: left;
+  padding-bottom: 5px;
+}
+#languages a:first-child {
+  margin-right: 1rem;
+}
+#languages a.active-text:after {
+  position: absolute;
+  top: 1.3em;
+  border-top: 2px solid;
+  clear: both;
+  content: " ";
+  display: block;
+  margin: 0.1em auto 0;
+  width: 100%;
+  text-align: center;
+  left: 0;
+}
+/**
+--------------------------------
+TABLET
+--------------------------------
+*/
+@media screen and (min-width: 768px) {
+  #top-section {
+    padding: 1.5rem 3rem;
+  }
+  #top-section .container {
+    vertical-align: top;
+    width: 100%;
+    text-align: right;
+  }
+  #top-section .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .page-header {
+    width: 40%;
+    margin-right: 0;
+    float: left;
+    text-align: left;
+  }
+  .page-header img {
+    height: 56px;
+  }
+  .page-header h1 {
+    font-size: 1.5rem;
+    margin-left: 65px;
+  }
+  #languages,
+  #about-site {
+    white-space: nowrap;
+    margin-top: 1em;
+    font-size: 1rem;
+    position: initial;
+    float: right;
+  }
+  #languages a,
+  #about-site a {
+    margin-left: 2.5rem;
+  }
+  #about-site {
+    margin-right: 0;
+  }
+}
+.header-wrap {
+  margin: 10px;
+}
+/** Toppmeny på alle sider */
+.top-menu {
+  background: #fff;
+  margin: 10px;
+  padding: 10px;
+  /** Forsiden */
+  /** Underside */
+}
+.top-menu .top-header {
+  padding: 10px;
+  font-size: 24px;
+}
+.top-menu .top-header .highlighted {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .top-menu .top-header {
+    font-size: 28px;
+    line-height: 1.6em;
+  }
+}
+.top-menu.frontmenu a,
+.top-menu.frontmenu span,
+.top-menu.frontmenu p {
+  line-height: 20px;
+}
+.top-menu.frontmenu a {
+  display: block;
+  margin-bottom: 10px;
+}
+.top-menu.frontmenu a:last-child {
+  margin-bottom: 0;
+}
+.top-menu.frontmenu .text-box {
+  font-size: 1.1rem;
+}
+.top-menu.frontmenu .text-box h1,
+.top-menu.frontmenu .text-box h2 {
+  font-size: 1.1rem;
+}
+.top-menu.frontmenu .text-box p {
+  margin: 0;
+  padding: 0;
+}
+.top-menu.no-topsubmenu {
+  margin-bottom: 0;
+}
+.top-menu.submenu-three-box {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin: 15px 0 0 0;
+}
+.top-menu.submenu-three-box li {
+  padding: 0;
+  margin: 0;
+}
+.top-menu .dropdown-container {
+  display: none;
+}
+.top-menu.integrated-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.top-menu.submenu-two-box {
+  list-style: none;
+  margin: 15px 0 0 0;
+  padding: 0;
+}
+.top-menu.submenu-two-box .selected-arrow {
+  display: none;
+}
+.navbar {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navbar li {
+  padding: 0;
+  margin: 0;
+}
+.navbar a {
+  display: block;
+}
+.navbar li {
+  margin-bottom: 10px;
+}
+.navbar li:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .top-menu.frontmenu {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .top-menu.frontmenu header {
+    flex: 3 0 100%;
+  }
+  .top-menu.frontmenu a {
+    box-sizing: border-box;
+    flex: 1 0 20%;
+    display: flex;
+    align-items: stretch;
+    margin: 0;
+  }
+  .top-menu.frontmenu a:nth-child(3) {
+    padding: 0 10px;
+  }
+  .top-menu.frontmenu .text-box {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 8rem;
+  }
+  .top-menu.frontmenu .text-box h1,
+  .top-menu.frontmenu .text-box h2 {
+    font-size: 1.3rem;
+  }
+}
+.front-title {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMDggMjI3IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMDggMjI3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzU5NEY0ODt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04My41LDYyLjNINzJjLTUuNCwyLjYtMTEuNSw0LjEtMTgsNC4xcy0xMi41LTEuNS0xOC00LjFIMjQuNUMwLDYyLjMsMCw4Ni4xLDAsOTguNHY1OS4zaDE2Ljl2LTU1CgljMCwwLDAuNC0yLjQsMy40LTIuNGMyLjksMCwzLjQsMi40LDMuNCwyLjR2MTAuOXYzMS4zdjcxLjRjMCw1LjksNS4zLDEwLjcsMTEuOCwxMC43YzYuNSwwLDExLjgtNC44LDExLjgtMTAuN3YtNTkuMQoJYzAsMC0wLjQtNi4xLDYuNy02LjFjNy4yLDAsNi43LDYuMSw2LjcsNi4xdjU5LjFjMCw1LjksNS4zLDEwLjcsMTEuOCwxMC43YzYuNSwwLDExLjgtNC44LDExLjgtMTAuN3YtNzEuNHYtMzEuM3YtMTAuOQoJYzAsMCwwLjQtMi40LDMuNC0yLjRjMi45LDAsMy40LDIuNCwzLjQsMi40djU1SDEwOFY5OC40QzEwOCw4Ni4xLDEwOCw2Mi4zLDgzLjUsNjIuM3oiLz4KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iNTQiIGN5PSIyNy44IiByPSIyNy44Ii8+Cjwvc3ZnPgo=');
+  background-size: 50px 50px;
+  background-position: 50% 28%;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 1.5rem;
+}
+.front-title h1 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .front-title h1 {
+    font-size: 1.8rem;
+  }
+}
+.front-title.recruit-title,
+.front-title.no-recruit {
+  background-size: 40px 40px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxMzIgMTI1LjEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEzMiAxMjUuMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM1OTRGNDg7fQoJLnN0MXtmaWxsOiM1OTRGNDg7c3Ryb2tlOiM1OTRGNDg7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik04OC41LDEwdjIzLjZoLTQ1VjEwSDg4LjUgTTk1LjUsMGgtNTljLTEuNywwLTMsMS40LTMsM3YzNy42YzAsMS42LDEuMywzLDMsM2g1OWMxLjcsMCwzLTEuNCwzLTNWMwoJCQlDOTguNSwxLjQsOTcuMiwwLDk1LjUsMEw5NS41LDB6Ii8+Cgk8L2c+CjwvZz4KPHBhdGggY2xhc3M9InN0MSIgZD0iTTEyMS41LDEyNC42aC0xMTFjLTUuNSwwLTEwLTQuNS0xMC0xMFYzNWMwLTUuNSw0LjUtMTAsMTAtMTBoMTExYzUuNSwwLDEwLDQuNSwxMCwxMHY3OS42CglDMTMxLjUsMTIwLjEsMTI3LDEyNC42LDEyMS41LDEyNC42eiIvPgo8L3N2Zz4K');
+}
+.arrow-link {
+  position: relative;
+  padding-right: 60px;
+}
+.arrow-link:after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  margin-top: -15px;
+  background-image: url("../bilder/liten-pil.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+.text-box {
+  background-color: #e0ded8;
+  padding: 1rem;
+}
+.text-box.arrow-link {
+  padding-right: 80px;
+}
+.text-box:hover {
+  background-color: #c30000;
+}
+.text-box:hover * {
+  color: #fff !important;
+}
+.text-box .zone-header {
+  color: #c30000;
+  display: block;
+  margin: 0.2em 0;
+}
+@media screen and (min-width: 768px) {
+  .text-box.arrow-link {
+    padding: 1.5rem;
+    padding-bottom: 60px;
+  }
+  .text-box.arrow-link:after {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: auto;
+  }
+}
+/** Innholdsartikke */
+.article {
+  background: #fff;
+  margin: 10px;
+  color: #675c53;
+  padding: 1.5rem 1rem 2rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .article {
+    padding: 2rem;
+  }
+}
+.article > :last-child {
+  margin-bottom: 0;
+}
+.article h2 {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .article h2 {
+    font-size: 18px;
+  }
+}
+.article .heading-prefix {
+  color: #c30000;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+.article a {
+  text-decoration: none;
+  color: #007fff;
+}
+.article a:hover {
+  text-decoration: underline;
+}
+.article p {
+  padding-bottom: 1em;
+}
+.article ul {
+  margin: 0;
+  list-style-type: disc;
+  padding-left: 1em;
+}
+.article.article-tips {
+  background-color: #dfded7;
+}
+.about-top-menu .header-wrap {
+  margin-bottom: 0;
+}
+.about-top-menu .top-header {
+  padding-bottom: 0;
+}
+.profiles-container {
+  display: none;
+}
+#content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#footer {
+  display: none;
+}
+#js-scroll-innholdContainer {
+  margin-top: -20px;
+  padding-top: 20px;
+  z-index: 0;
+}

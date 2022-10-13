@@ -1,0 +1,113 @@
+body.contrast,
+.contrast div,
+.contrast .article,
+.contrast .aside-tabs,
+.contrast .breadcrumbs {background:#000 !important}
+
+
+/**********************************************
+*
+* Color
+*
+***********************************************/
+
+body.contrast,
+.contrast label,
+.contrast h1,
+.contrast h2,
+.contrast h3,
+.contrast h4,
+.contrast h5,
+.contrast p,
+.contrast li,
+.contrast .article li,
+.contrast strong,
+.contrast ul { color: #FFF!important;}
+
+.contrast #footer a span { color: black !important;}
+
+.contrast a,
+.contrast a:hover,
+.contrast #footer a:hover,
+.contrast #footer a:hover span,
+.contrast a span,
+.contrast a div,
+.contrast a:visited { color: yellow!important; border: none !important;}
+
+/*Meny*/
+
+.contrast #__dimScreen {display:none !important}
+.contrast ul.menu-main li.highlighted {background-color:#000 !important}
+.contrast ul.menu-main li a.top-level {color:#fff;}
+.contrast ul.menu-main li.nav-path a.top-level {color:#fff;background-image:none}
+.contrast ul.menu-main li.nav-path a.top-level span {background-color:#000;}
+.contrast .expanded ul.menu-main li.nav-path a.top-level {color:#fff;background-image:none;}
+.contrast div.expanded ul.menu-main li.highlighted a.top-level, .contrast div.expanded ul.menu-main li.highlighted a.top-level:hover {color:#000 !important}
+.contrast div.expanded {border-bottom:1px solid yellow;}
+.contrast ul.menu-sub li a {color:yellow;}
+.contrast .highlighted ul.menu-sub li a:hover {border-color:yellow !important;}
+.contrast ul.menu-sub li a:hover span {border-color:yellow !important;}
+.contrast ul.menu-main li a:hover, .contrast ul.menu-sub li a:hover {background-color:yellow !important;color:#000 !important;}
+.contrast .home-button a:hover {text-decoration:underline !important;}
+
+.contrast #bg {display:none;}
+.contrast #top-section {height:4em !important;}
+.contrast #top-section, .contrast #top-section div  {background: yellow !important;}
+.contrast #top-section a, .contrast #top-section a span  {color: black !important;}
+
+
+.contrast li.highlighted, .contrast li.highlighted ul.menu-sub {background: black !important;}
+.contrast ul.menu-main li.path a.active {background: yellow !important; color: black !important;}
+.contrast ul.menu-main li.highlighted a {background: yellow !important; color: black !important;}
+.contrast ul.menu-main li.highlighted ul.menu-sub li a {background: black !important; color: yellow !important;}
+.contrast ul.menu-main li.highlighted ul.menu-sub a:hover {background-color: yellow !important; color: black !important;}
+
+/* slideshow */
+
+.contrast .links ul li { background: yellow !important; color: black !important;}
+.contrast .links ul li.highlight {background: black !important; color: yellow !important; }
+.contrast .teaser h1 { border-bottom:3px dotted yellow !important; }
+
+/* snarveier */
+.contrast .shortcuts li.red a, .contrast .shortcuts li.red span, .contrast .shortcuts li.red div { background :#C30000 !important; color:#FFFFFF !important; }
+.contrast .shortcuts li.lightgrey a, .contrast .shortcuts li.lightgrey span, .contrast .shortcuts li.lightgrey div { background :#F9F8F7 !important; color:#000 !important; }
+
+/* FAQ */
+
+.contrast .search-top {background: black !important;}
+.contrast h4.ui-accordion-header a { background: black url(../bilder/arrow-red-r.gif) no-repeat scroll 0px 12px !important; }
+.contrast ul.faq li.active {background-color:black;}
+
+.contrast ul.subsection-menu li a {background: yellow !important; color: black !important;}
+.contrast ul.subsection-menu li a:hover, .contrast ul.subsection-menu li a.active  {background: black !important; color: yellow !important;}
+.contrast ul.subsection-menu li {border: 2px solid black !important;}
+
+
+/* listevisning artikkel */
+.contrast .box {background: black !important;}
+
+.contrast #south .group LI,
+.contrast #south .group LI H3,
+.contrast #south .group LI SPAN,
+.contrast #south .group LI A,
+.contrast #south .group LI A:hover,
+.contrast #south .group LI A:visited { background: #fff; color: #000!important; }
+.contrast #south .group DIV { background: #fff!important; }
+
+
+.contrast #east .shortcuts LI,
+.contrast #east .shortcuts LI H3,
+.contrast #east .shortcuts LI SPAN,
+.contrast #east .shortcuts LI A,
+.contrast #east .shortcuts LI A:hover,
+.contrast #east .shortcuts LI A:visited { background: #fff; color: #000!important; }
+.contrast #east .shortcuts DIV { background: #fff!important; }
+
+.contrast #article .shortcuts LI,
+.contrast #article .shortcuts LI H3,
+.contrast #article .shortcuts LI SPAN,
+.contrast #article .shortcuts LI A,
+.contrast #article .shortcuts LI A:hover,
+.contrast #article .shortcuts LI A:visited { background: #fff; color: #000!important; }
+.contrast #article .shortcuts DIV { background: #fff!important; }
+.contrast ul.subsection-menu li a span { border-bottom: none; }

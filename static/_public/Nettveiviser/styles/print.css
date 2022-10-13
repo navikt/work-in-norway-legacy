@@ -1,0 +1,56 @@
+/**********************************************
+*
+*	PRINT TRICKS
+*
+***********************************************/
+body { font-size: 85%;}
+body, label { font-family: helvetica, arial, sans-serif; font-size: 12pt; }
+
+h1, h2, h3, h4, h5 { font-family: helvetica, arial, sans-serif;}
+
+h1 { font-size: 1.5em;}
+
+/* Sort skrift på print */
+body, label, a, a:visited, h1, h2, h3, h4, h5, strong, b, span, ul, ol { color: #000000!important;}
+
+a, a:visited {text-decoration: none;}
+
+/*****************************
+*
+*	Display
+*
+*********************************/
+#accessibility-shortcuts,
+#accessibility-links,
+#nav,
+#bg,
+#top-section,
+div.leftArrow,
+div.rightArrow,
+div.searchfield,
+ul.subsection-menu,
+div#slideshow div.hidden,
+p.share{ display: none!important;}
+
+.page-header, 
+.group underline align, 
+.navbar, 
+.navbar > li a, 
+.article
+
+/***********************************
+*
+* Image
+*
+************************************/
+html,
+body { background-image: none!important;}
+IMG { border: none; }
+
+/* FAQ */
+ul.faq div {display: block !important;}
+
+.shortcuts, .article-list, .faq {list-style:none; padding: 0; margin: 0;}
+.shortcuts li {clear: both; padding-top: 30px;}
+.shortcuts li a {display:block;}
+.shortcuts li img {float:left; padding-right:10px;}
