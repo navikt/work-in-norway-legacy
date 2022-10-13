@@ -1,0 +1,30 @@
+---
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: workinnorway-legacy-proxy
+  namespace: personbruker
+  labels:
+    team: personbruker
+spec:
+  image: {{image}}
+  team: personbruker
+  port: 4090
+  liveness:
+    path: /internal/isAlive
+    initialDelay: 5
+  readiness:
+    path: /internal/isReady
+    initialDelay: 5
+  ingresses:
+    - https://workinnorway.dev.nav.no
+  env:
+    - name: NPM_CONFIG_CACHE
+      value: /tmp/npm-cache
+  replicas:
+    min: 2
+    max: 4
+  resources:
+    requests:
+      cpu: 200m
+      memory: 512Mi
