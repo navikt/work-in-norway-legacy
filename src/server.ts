@@ -18,12 +18,13 @@ app.use('/', express.static(staticPath));
 app.get('*', async (req, res) => {
     const response = await fetch(`${process.env.CMS_SITE_URL}${req.url}`);
 
+    if (!response.ok) {
+        return res.status(404).send('404!');
+    }
+
     const finalText = await response
         .text()
         .then((text) => text.replaceAll(process.env.CMS_SITE_URL, ''));
-
-    const contentType = response.headers.get('content-type') || '';
-    res.setHeader('content-type', contentType);
 
     console.log(`Requested ${req.url} from ${process.env.CMS_SITE_URL}`);
 
@@ -32,6 +33,7 @@ app.get('*', async (req, res) => {
 
 const server = app.listen(appPort, () => {
     console.log(`Server starting on port ${appPort}`);
+    console.log(staticPath);
 });
 
 const shutdown = () => {

@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
     "baseUrl": "src",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": [
       "esnext",
-      "dom",
+      "dom"
     ],
     "moduleResolution": "node",
     "module": "esnext",
@@ -16,7 +16,6 @@
     "target": "es2017"
   },
   "include": [
-    "src/**/*.js",
-    "src/**/*.ts",
+    "src/**/*.ts"
   ]
 }
