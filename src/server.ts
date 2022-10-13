@@ -16,13 +16,20 @@ app.get('/internal/isReady', (req, res) => {
 app.get('*', async (req, res) => {
     const html = await fetch(`${process.env.CMS_SITE_URL}${req.url}`)
         .then((res) => {
-            return res.text();
+            if (res.ok) {
+                return res.text();
+            }
+            console.log(`Error:`, res);
+
+            throw new Error(res.statusText);
         })
         .catch((e) => {
             return e;
         });
 
-    console.log(`Requested ${req.url} from ${process.env.CMS_SITE_URL}`);
+    console.log(
+        `Requested ${req.url} from ${process.env.CMS_SITE_URL} - ${html}`
+    );
 
     res.status(200).send(html);
 });
