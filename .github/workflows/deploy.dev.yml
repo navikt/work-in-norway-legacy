@@ -31,9 +31,9 @@ jobs:
           docker build -t ${{ env.image }} .
           docker push ${{ env.image }}
       - name: Deploy to nais
-          uses: nais/deploy/actions/deploy@v1
-          env:
-            CLUSTER: dev-gcp
-            APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-            VAR: image=${{ env.image }}
-            RESOURCE: .nais/config.dev.yaml
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          CLUSTER: dev-gcp
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          VAR: image=${{ env.image }}
+          RESOURCE: .nais/config.dev.yaml
