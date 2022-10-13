@@ -3,8 +3,6 @@ import express from 'express';
 const app = express();
 const appPort = 4090;
 
-let isReady = false;
-
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
 });

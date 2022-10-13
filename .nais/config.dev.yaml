@@ -31,6 +31,7 @@ spec:
             - name: Enonic CMS
               port: 8080
               protocol: HTTP
+  webproxy: true
   replicas:
     min: 1
     max: 1
