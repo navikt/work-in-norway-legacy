@@ -23,6 +23,14 @@ spec:
       value: /tmp/npm-cache
     - name: CMS_SITE_URL
       value: http://a30jbsl00149.oera.no:8080/site/21
+  accessPolicy:
+    outbound:
+      external:
+        - host: a30jbsl00149.oera.no
+          ports:
+            - name: Enonic CMS
+              port: 8080
+              protocol: HTTP
   replicas:
     min: 2
     max: 4
