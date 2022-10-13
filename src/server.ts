@@ -21,6 +21,7 @@ app.get('*', async (req, res) => {
 
             throw new Error(res.statusText);
         })
+        .then((html) => html.replaceAll(process.env.CMS_SITE_URL, ''))
         .catch((e) => {
             return e;
         });
