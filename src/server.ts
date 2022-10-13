@@ -10,16 +10,21 @@ app.get('/internal/isAlive', (req, res) => {
 });
 
 app.get('/internal/isReady', (req, res) => {
-    if (!isReady) {
-        return res.status(503).send('I am not ready...');
-    }
-
     return res.status(200).send('I am ready!');
 });
 
 app.get('*', async (req, res) => {
-    console.log('test');
-    res.status(200).send(req.url);
+    const html = await fetch(`${process.env.CMS_SITE_URL}${req.url}`)
+        .then((res) => {
+            return res.text();
+        })
+        .catch((e) => {
+            return e;
+        });
+
+    console.log(`Requested ${req.url} from ${process.env.CMS_SITE_URL}`);
+
+    res.status(200).send(html);
 });
 
 const server = app.listen(appPort, () => {
