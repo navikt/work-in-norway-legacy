@@ -2,8 +2,6 @@
   "name": "work-in-norway-legacy-proxy",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "module": "es",
   "scripts": {
     "build": "rm -fr distSrc && tsc",
     "start": "node distSrc/server.js",

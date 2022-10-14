@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "allowJs": false,
     "baseUrl": "src",
@@ -6,14 +7,14 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "lib": [
-      "esnext",
+      "es2021",
       "dom"
     ],
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "CommonJS",
     "outDir": "./distSrc",
     "strict": true,
-    "target": "es2017"
+    "target": "es2021"
   },
   "include": [
     "src/**/*.ts"

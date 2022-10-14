@@ -1,4 +1,5 @@
 import express from 'express';
+import { handleProxyRequest } from './cms-proxy';
 
 const app = express();
 const appPort = 4090;
@@ -15,25 +16,10 @@ app.get('/internal/isReady', (req, res) => {
 
 app.use('/', express.static(staticPath));
 
-app.get('*', async (req, res) => {
-    const response = await fetch(`${process.env.CMS_SITE_URL}${req.url}`);
-
-    if (!response.ok) {
-        return res.status(404).send('404!');
-    }
-
-    const finalText = await response
-        .text()
-        .then((text) => text.replaceAll(process.env.CMS_SITE_URL, ''));
-
-    console.log(`Requested ${req.url} from ${process.env.CMS_SITE_URL}`);
-
-    res.status(200).send(finalText);
-});
+app.get('*', handleProxyRequest);
 
 const server = app.listen(appPort, () => {
     console.log(`Server starting on port ${appPort}`);
-    console.log(staticPath);
 });
 
 const shutdown = () => {
