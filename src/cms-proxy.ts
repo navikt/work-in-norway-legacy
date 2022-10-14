@@ -37,9 +37,9 @@ export const handleProxyRequest = async (
         return res.status(200).send(cachedHtml);
     }
 
-    const absoluteUrl = `${siteUrl}${path}`;
+    const url = `${siteUrl}${path}`;
 
-    const response = await fetch(absoluteUrl).catch((e) => {
+    const response = await fetch(url).catch((e) => {
         console.error(`Fetch error for ${path}: ${e}`);
         return null;
     });
