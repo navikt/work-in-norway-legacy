@@ -36,7 +36,7 @@ export const handleProxyRequest = async (
     });
 
     if (!response) {
-        return res.status(500);
+        return res.status(500).send('Server error');
     }
 
     if (!validateHtmlResponse(response)) {
@@ -44,7 +44,7 @@ export const handleProxyRequest = async (
             `Invalid response for ${path}: ${response.status} - ${response.statusText}`
         );
 
-        return res.status(404).send('404!');
+        return res.status(404).send('Not found');
     }
 
     const html = await processHtmlResponse(response);
