@@ -11,8 +11,17 @@ const validateHtmlResponse = (response: FetchResponse) =>
     response.ok &&
     response.headers.get('content-type')?.startsWith('text/html');
 
-const processHtmlResponse = async (response: FetchResponse) =>
-    await response.text().then((html) => html.replaceAll(siteUrl, '')); // Rewrite absolute urls to relative
+const processHtmlResponse = async (
+    response: FetchResponse
+): Promise<string | null> =>
+    response
+        .text()
+        // Rewrite absolute urls to relative
+        .then((html) => html.replaceAll(siteUrl, ''))
+        .catch((e) => {
+            console.error(`Error processing html-response - ${e}`);
+            return null;
+        });
 
 export const handleProxyRequest = async (
     req: Request,
@@ -48,6 +57,9 @@ export const handleProxyRequest = async (
     }
 
     const html = await processHtmlResponse(response);
+    if (!html) {
+        return res.status(500).send('Server error');
+    }
 
     cache.set(path, html);
 
