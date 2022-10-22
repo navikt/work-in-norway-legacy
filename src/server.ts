@@ -16,7 +16,7 @@ app.get('/internal/isReady', (req, res) => {
 app.use('/', express.static(staticPath));
 
 app.get('*', (req, res) => {
-    return res.status(404).send('404!');
+    return res.status(404).send('Not found');
 });
 
 const server = app.listen(appPort, () => {
