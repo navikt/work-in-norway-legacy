@@ -1,5 +1,4 @@
 import express from 'express';
-import { handleProxyRequest } from './cms-proxy';
 
 const app = express();
 const appPort = 4090;
@@ -16,7 +15,9 @@ app.get('/internal/isReady', (req, res) => {
 
 app.use('/', express.static(staticPath));
 
-app.get('*', handleProxyRequest);
+app.get('*', (req, res) => {
+    return res.status(404).send('404!');
+});
 
 const server = app.listen(appPort, () => {
     console.log(`Server starting on port ${appPort}`);
