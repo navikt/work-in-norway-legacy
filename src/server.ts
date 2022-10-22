@@ -16,6 +16,7 @@ app.get('/internal/isReady', (req, res) => {
 app.use('/', express.static(staticPath));
 
 app.get('*', (req, res) => {
+    console.log(`Not found: ${req.url}`);
     return res.status(404).send('Not found');
 });
 

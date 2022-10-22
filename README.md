@@ -1,1 +1,1 @@
-Proxy til ye olde Enonic CMS server for workinnorway.no
+Statiske nettsider for www.workinnorway.no
