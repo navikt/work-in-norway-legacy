@@ -13,7 +13,7 @@ app.get('/internal/isReady', (req, res) => {
     return res.status(200).send('I am ready!');
 });
 
-app.use('/', express.static(staticPath));
+app.use('/', express.static(staticPath, { maxAge: 300 }));
 
 app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
