@@ -21,14 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Scan for broken internal links
-        run: |
-          echo "scanInternalLastError=$(npm run scan-internal | tail -n 1)" >> $GITHUB_ENV
-      - name: Abort on broken links
-        run: |
-          echo "${{ env.scanInternalLastError }}"
-          if [ -z "${{ env.scanInternalLastError }}" ]; then
-            echo "It's empty!"
-          fi
+        uses: JustinBeckwith/linkinator-action@v1
+          with:
+            paths: ./static
+            concurrency: 100
+            markdown: false
+            skip: "^https?://(?!(localhost|www\.workinnorway\.no))"
+            recurse: true
       - name: Build application
         run: npm run build
       - name: Login to Docker registry
