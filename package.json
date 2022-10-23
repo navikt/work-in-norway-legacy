@@ -6,8 +6,8 @@
     "build": "rm -fr dist && tsc",
     "start": "node dist/server.js",
     "dev": "npm run build && concurrently \"tsc -w\" \"nodemon -w dist dist/server.js\"",
-    "scan-internal": "npx linkinator ./static --skip '^https?://(?!(localhost|www\\.workinnorway\\.no))' --recurse",
-    "scan-all": "npx linkinator ./static --recurse"
+    "scan-internal": "npx linkinator ./static --skip '^https?://(?!(localhost|www\\.workinnorway\\.no))' --recurse --verbosity error",
+    "scan-all": "npx linkinator ./static --recurse --verbosity error"
   },
   "dependencies": {
     "express": "4.18.2"

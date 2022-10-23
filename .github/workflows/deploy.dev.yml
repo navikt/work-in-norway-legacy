@@ -22,16 +22,13 @@ jobs:
         run: npm ci
       - name: Scan for broken internal links
         run: |
-          echo "scanInternalResult=$(npm run scan-internal | tail -n 1)" >> $GITHUB_ENV
+          echo "scanInternalLastError=$(npm run scan-internal | tail -n 1)" >> $GITHUB_ENV
       - name: Abort on broken links
         run: |
-          echo "${{ env.scanInternalResult }}"
-          if [[ "${{ env.scanInternalResult }}" == "ERROR"* ]]; then
-            echo "Error!"
-            exit 1
+          echo "${{ env.scanInternalLastError }}"
+          if [ -z "${{ env.scanInternalLastError }}" ]; then
+            echo "It's empty!"
           fi
-      - name: Scan for broken external links
-        run: npm run scan-all
       - name: Build application
         run: npm run build
       - name: Login to Docker registry
