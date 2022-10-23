@@ -20,8 +20,17 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Scan for broken links
-        run: npm run scan
+      - name: Scan for broken internal links
+        run: |
+          echo "scanInternalResult=$(npm run scan-internal)" >> $GITHUB_ENV
+      - name: Abort on broken links
+        run: |
+          echo "${{ env.scanInternalResult }}"
+          if [[ "${{ env.scanInternalResult }}" == *"[404]"* ]]; then
+            echo "It's there."
+          fi
+      - name: Scan for broken external links
+        run: npm run scan-all
       - name: Build application
         run: npm run build
       - name: Login to Docker registry
