@@ -22,12 +22,13 @@ jobs:
         run: npm ci
       - name: Scan for broken internal links
         run: |
-          echo "scanInternalResult=$(npm run scan-internal)" >> $GITHUB_ENV
+          echo "scanInternalResult=$(npm run scan-internal | tail -n 1)" >> $GITHUB_ENV
       - name: Abort on broken links
         run: |
           echo "${{ env.scanInternalResult }}"
-          if [[ "${{ env.scanInternalResult }}" == *"[404]"* ]]; then
-            echo "It's there."
+          if [[ "${{ env.scanInternalResult }}" == "ERROR"* ]]; then
+            echo "Error!"
+            exit 1
           fi
       - name: Scan for broken external links
         run: npm run scan-all
