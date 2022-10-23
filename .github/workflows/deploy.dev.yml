@@ -28,6 +28,16 @@ jobs:
           markdown: false
           skip: '^https?://(?!(localhost|www\.workinnorway\.no))'
           recurse: true
+          verbosity: error
+      - name: Scan for broken external links
+        uses: JustinBeckwith/linkinator-action@v1
+        with:
+          paths: ./static
+          concurrency: 100
+          markdown: false
+          recurse: true
+          verbosity: error
+        continue-on-error: true
       - name: Build application
         run: npm run build
       - name: Login to Docker registry
