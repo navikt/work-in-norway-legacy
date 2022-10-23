@@ -22,12 +22,12 @@ jobs:
         run: npm ci
       - name: Scan for broken internal links
         uses: JustinBeckwith/linkinator-action@v1
-          with:
-            paths: ./static
-            concurrency: 100
-            markdown: false
-            skip: "^https?://(?!(localhost|www\.workinnorway\.no))"
-            recurse: true
+        with:
+          paths: ./static
+          concurrency: 100
+          markdown: false
+          skip: "^https?://(?!(localhost|www\.workinnorway\.no))"
+          recurse: true
       - name: Build application
         run: npm run build
       - name: Login to Docker registry
