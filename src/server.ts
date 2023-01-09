@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
     return res.status(404).sendFile(clientErrorHtml);
 });
 
-const errorHandler: ErrorRequestHandler = (err, req, res, _) => {
+app.use(((err, req, res, _) => {
     const { path } = req;
     const { status, stack } = err;
     const msg = stack?.split('\n')[0];
@@ -37,9 +37,7 @@ const errorHandler: ErrorRequestHandler = (err, req, res, _) => {
     }
 
     return res.send(`Server-feil - Feilkode ${status}`);
-};
-
-app.use(errorHandler);
+}) as ErrorRequestHandler);
 
 const server = app.listen(appPort, () => {
     console.log(`Server starting on port ${appPort}`);
