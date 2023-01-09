@@ -1,15 +1,12 @@
-name: Deploy to dev
+name: Deploy to prod
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - 'master'
+  workflow_dispatch
 
 jobs:
   deploy:
     uses: ./.github/workflows/build-and-deploy.yml
     with:
-      cluster: dev-gcp
-      ingress: https://workinnorway.dev.nav.no
+      cluster: prod-gcp
+      ingress: https://workinnorway.nav.no
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
