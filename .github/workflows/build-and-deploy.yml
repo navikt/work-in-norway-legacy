@@ -1,12 +1,13 @@
 name: Build and deploy
 on:
   workflow_call:
-    cluster:
-      required: true
-      type: string
-    ingress:
-      required: true
-      type: string
+    inputs:
+      cluster:
+        required: true
+        type: string
+      ingress:
+        required: true
+        type: string
     secrets:
       NAIS_DEPLOY_APIKEY:
         required: true
