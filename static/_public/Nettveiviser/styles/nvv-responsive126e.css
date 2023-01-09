@@ -567,9 +567,11 @@ TABLET
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 #content > .container {
-  min-height: calc(100vh - 250px);
+  padding-bottom: 2rem;
+  flex-grow: 1;
 }
 #footer {
   display: none;
@@ -583,8 +585,6 @@ TABLET
 .footer {
   background-color: #333;
   color: #fff;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
   padding: 1rem;
 }
 
