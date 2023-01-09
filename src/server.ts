@@ -4,6 +4,7 @@ const app = express();
 const appPort = 4090;
 
 const staticPath = `${process.cwd()}/static`;
+const errorFile = `${staticPath}/404.html`;
 
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
@@ -17,7 +18,7 @@ app.use('/', express.static(staticPath, { maxAge: 300 }));
 
 app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
-    return res.status(404).send('Not found');
+    return res.status(404).sendFile(errorFile);
 });
 
 const server = app.listen(appPort, () => {
