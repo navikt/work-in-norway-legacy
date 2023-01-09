@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
     return res.status(404).sendFile(clientErrorHtml);
 });
 
-const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+const errorHandler: ErrorRequestHandler = (err, req, res, _) => {
     const { path } = req;
     const { status, stack } = err;
     const msg = stack?.split('\n')[0];
