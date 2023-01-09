@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { ErrorRequestHandler } from 'express';
 
 const app = express();
 const appPort = 4090;
@@ -20,6 +20,19 @@ app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
     return res.status(404).sendFile(errorFile);
 });
+
+const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+    const { path } = req;
+    const { status, stack } = err;
+    const msg = stack?.split('\n')[0];
+
+    console.log(`Express error on path ${path}: ${status} ${msg}`);
+
+    res.status(status || 500);
+    return res.send(`Forespørselen feilet - Feilkode ${status}`);
+};
+
+app.use(errorHandler);
 
 const server = app.listen(appPort, () => {
     console.log(`Server starting on port ${appPort}`);
