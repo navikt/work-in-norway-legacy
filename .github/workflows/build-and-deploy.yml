@@ -52,7 +52,7 @@ jobs:
           verbosity: error
         continue-on-error: true
       - name: Kill test server
-        run: kill %
+        run: kill %%
       - name: Login to Docker registry
         uses: docker/login-action@v2
         with:
