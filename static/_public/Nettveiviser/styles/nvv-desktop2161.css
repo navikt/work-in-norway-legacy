@@ -134,9 +134,7 @@ textarea {
 }
 #ie-background {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://e32apvl024.oera-t.local:8080/site/21/_public/Nettveiviser/bilder/nvv_back.jpg", sizingMethod="scale");
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(
-src='http://e32apvl024.oera-t.local:8080/site/21/_public/Nettveiviser/bilder/nvv_back.jpg',
-sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://e32apvl024.oera-t.local:8080/site/21/_public/Nettveiviser/bilder/nvv_back.jpg',sizingMethod='scale')";
 }
 a img {
   border: none;
