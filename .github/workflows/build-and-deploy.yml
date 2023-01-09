@@ -29,7 +29,7 @@ jobs:
         run: npm ci
       - name: Build application
         run: npm run build
-      - name: Start server for tests
+      - name: Start test server
         run: |
           npm run start &
           sleep 5
@@ -51,8 +51,8 @@ jobs:
           recurse: true
           verbosity: error
         continue-on-error: true
-      - name: Kill server
-        run: kill $!
+      - name: Kill test server
+        run: kill %
       - name: Login to Docker registry
         uses: docker/login-action@v2
         with:
