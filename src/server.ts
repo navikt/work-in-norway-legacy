@@ -4,7 +4,7 @@ const app = express();
 const appPort = 4090;
 
 const staticPath = `${process.cwd()}/static`;
-const errorFile = `${staticPath}/404.html`;
+const clientErrorHtml = `${staticPath}/404.html`;
 
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
@@ -18,7 +18,7 @@ app.use('/', express.static(staticPath, { maxAge: 300 }));
 
 app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
-    return res.status(404).sendFile(errorFile);
+    return res.status(404).sendFile(clientErrorHtml);
 });
 
 const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
@@ -28,8 +28,15 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 
     console.log(`Express error on path ${path}: ${status} ${msg}`);
 
+    const statusCode = status || 500;
+
     res.status(status || 500);
-    return res.send(`Forespørselen feilet - Feilkode ${status}`);
+
+    if (statusCode < 500) {
+        return res.sendFile(clientErrorHtml);
+    }
+
+    return res.send(`Server-feil - Feilkode ${status}`);
 };
 
 app.use(errorHandler);
