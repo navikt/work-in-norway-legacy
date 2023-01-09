@@ -76,11 +76,15 @@ textarea {
   width: 1px;
 }
 #content {
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
   height: auto;
-  margin: auto;
   margin: 0 auto -80px;
   max-width: 100%;
+}
+#content > .container {
+  min-height: calc(100vh - 330px);
 }
 .group:after,
 .container:after {
@@ -197,12 +201,6 @@ div.grid-7 {
 #header {
   padding-bottom: 14px;
   min-height: 20px;
-}
-#push {
-  height: 75px;
-  display: block;
-  margin: 0;
-  padding: 0;
 }
 #footer {
   position: relative;
@@ -988,4 +986,26 @@ ul li {
 }
 #content #top-section + .container {
   padding-top: 126px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.footer  a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer .accessibility {
+  margin-left: 1rem;
 }
