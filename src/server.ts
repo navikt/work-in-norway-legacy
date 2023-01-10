@@ -1,7 +1,7 @@
 import express, { ErrorRequestHandler } from 'express';
 
 const app = express();
-const appPort = 4090;
+const port = 4090;
 
 const staticPath = `${process.cwd()}/static`;
 const clientErrorHtml = `${staticPath}/404.html`;
@@ -14,7 +14,10 @@ app.get('/internal/isReady', (req, res) => {
     return res.status(200).send('I am ready!');
 });
 
-app.use('/', express.static(staticPath, { maxAge: 300, extensions: ['html'] }));
+app.use(
+    '/',
+    express.static(staticPath, { maxAge: '1d', extensions: ['html'] })
+);
 
 app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
@@ -30,7 +33,7 @@ app.use(((err, req, res, _) => {
 
     const statusCode = status || 500;
 
-    res.status(status || 500);
+    res.status(statusCode);
 
     if (statusCode < 500) {
         return res.sendFile(clientErrorHtml);
@@ -39,8 +42,8 @@ app.use(((err, req, res, _) => {
     return res.send(`Server-feil - Feilkode ${status}`);
 }) as ErrorRequestHandler);
 
-const server = app.listen(appPort, () => {
-    console.log(`Server starting on port ${appPort}`);
+const server = app.listen(port, () => {
+    console.log(`Server starting on port ${port}`);
 });
 
 const shutdown = () => {
