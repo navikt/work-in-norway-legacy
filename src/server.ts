@@ -3,8 +3,9 @@ import express, { ErrorRequestHandler } from 'express';
 const app = express();
 const port = 4090;
 
-const staticPath = `${process.cwd()}/static`;
-const clientErrorHtml = `${staticPath}/404.html`;
+const contentBasePath = `${process.cwd()}/static`;
+const clientErrorPage = `${process.cwd()}/src/errorClient.html`;
+const serverErrorPage = `${process.cwd()}/src/errorServer.html`;
 
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
@@ -16,12 +17,12 @@ app.get('/internal/isReady', (req, res) => {
 
 app.use(
     '/',
-    express.static(staticPath, { maxAge: '1d', extensions: ['html'] })
+    express.static(contentBasePath, { maxAge: '1d', extensions: ['html'] })
 );
 
 app.get('*', (req, res) => {
     console.log(`Not found: ${req.url}`);
-    return res.status(404).sendFile(clientErrorHtml);
+    return res.status(404).sendFile(clientErrorPage);
 });
 
 app.use(((err, req, res, _) => {
@@ -36,10 +37,10 @@ app.use(((err, req, res, _) => {
     res.status(statusCode);
 
     if (statusCode < 500) {
-        return res.sendFile(clientErrorHtml);
+        return res.sendFile(clientErrorPage);
     }
 
-    return res.send(`Server-feil - Feilkode ${status}`);
+    return res.sendFile(serverErrorPage);
 }) as ErrorRequestHandler);
 
 const server = app.listen(port, () => {
