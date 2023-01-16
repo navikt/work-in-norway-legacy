@@ -3,9 +3,10 @@ import express, { ErrorRequestHandler } from 'express';
 const app = express();
 const port = 4090;
 
-const contentBasePath = `${process.cwd()}/static`;
-const clientErrorPage = `${process.cwd()}/src/errorClient.html`;
-const serverErrorPage = `${process.cwd()}/src/errorServer.html`;
+const staticBasePath = `${process.cwd()}/static`;
+const siteBasePath = `${staticBasePath}/site`;
+const clientErrorPage = `${staticBasePath}/errorClient.html`;
+const serverErrorPage = `${staticBasePath}/errorServer.html`;
 
 app.get('/internal/isAlive', (req, res) => {
     return res.status(200).send('I am alive!');
@@ -15,9 +16,17 @@ app.get('/internal/isReady', (req, res) => {
     return res.status(200).send('I am ready!');
 });
 
+app.get('/en', (req, res) => {
+    return res.redirect(301, '/en/Home');
+});
+
+app.get('/no', (req, res) => {
+    return res.redirect(301, '/no/Forside');
+});
+
 app.use(
     '/',
-    express.static(contentBasePath, { maxAge: '1d', extensions: ['html'] })
+    express.static(siteBasePath, { maxAge: '1d', extensions: ['html'] })
 );
 
 app.get('*', (req, res) => {
