@@ -28,11 +28,11 @@ files.forEach((file) => {
     const fileContent = fs.readFileSync(file).toString();
     const withCanonicalTag = fileContent
         .replace(
-            /<link\s+rel="canonical"(\s|[a-zA-Z0-9"=+])+(\/>)/,
+            /<link\s+rel="canonical"([^/])+(\/>)/,
             `<link rel="canonical" href="${url}" />`
         )
         .replace(
-            /<meta\s+property="og:url"(\s|[a-zA-Z0-9"=+])+(\/>)/,
+            /<meta\s+property="og:url"([^/])+(\/>)/,
             `<meta property="og:url" content="${url}" />`
         );
 
