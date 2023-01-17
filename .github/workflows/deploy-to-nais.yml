@@ -27,5 +27,5 @@ jobs:
         env:
           CLUSTER: ${{ inputs.cluster }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          VAR: image=${{ env.image }},ingress=${{ inputs.ingress }}
+          VAR: image=${{ inputs.image }},ingress=${{ inputs.ingress }}
           RESOURCE: .nais/config.yml
