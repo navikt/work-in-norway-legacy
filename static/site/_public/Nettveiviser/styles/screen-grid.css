@@ -29,7 +29,7 @@ a img {border:none;}
 html {font-size:100.01%;}
 body {color:#675C53;font-family:Helvetica, Arial, sans-serif;}
 h1, h2, h3, h4, h5, h6 {font-weight:normal;line-height:1}
-h1 {font-size:3em;margin-bottom:10px;font-weight:bold;color:#C30000;padding-bottom:8px; background:url(../bilder/dotted-line-lrg.gif) left bottom repeat-x;}
+h1 {font-size:3em;margin-bottom:10px;font-weight:bold;color:#C30000;padding-bottom:8px;border-bottom: 2px solid grey;}
 h2 {font-size:1.66em;margin-bottom:.1em;}
 h3 {font-size:1.66em;margin-bottom:.25em;}
 h4 {font-size:1.16em;margin-bottom:.1em;}
@@ -235,7 +235,7 @@ h4.ui-state-active a { border-bottom: 0 !important; background:#E0DED8 url(../bi
 .article-body h5 {font-size:1em;color:#C30000;font-weight:bold}
 .article-body h6 {font-size:1em;color:#675C53;font-weight:normal}
 
-.share {margin-top:14px;background:transparent url(../bilder/dotted-line-sml.gif) repeat-x scroll center top;padding-top:14px;}
+.share {margin-top:14px;border-bottom: 2px solid grey;padding-top:14px;}
 .share a {padding-left:20px;display:inline-block;}
 .socialmediafollow {clear:both;/*padding:7px;*/margin-bottom:14px;text-align:center;}
 .grid-6 .socialmediafollow {width:608px} /*Grid - 14px pga 2*7 padding*/
@@ -272,7 +272,7 @@ ul.article-list li, ul.split-list li {min-height:20px} /*IE7*/
 #articles .text {float:left;}
 .split-list .text {width:285px !important;} /*splittet artikkelliste*/
 .article-list .text {width:608px}
-.article-list h2 {padding-bottom:8px;margin-bottom:.2em; background:url(../bilder/dotted-line-lrg.gif) left bottom repeat-x;}
+.article-list h2 {padding-bottom:8px;margin-bottom:.2em;border-bottom: 2px solid grey;}
 
 /*-------------------------------------------------------------------------------
  * Slideshow

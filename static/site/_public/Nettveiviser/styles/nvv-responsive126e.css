@@ -94,7 +94,7 @@ li span {
   color: #fff !important;
 }
 .underline-header {
-  background: transparent url(../bilder/dotted-line-lrg.gif) repeat-x left bottom;
+  border-bottom: 2px solid grey;
   padding-bottom: 1rem;
 }
 .visuallyhidden {

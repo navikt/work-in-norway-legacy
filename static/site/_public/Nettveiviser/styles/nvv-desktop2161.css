@@ -132,10 +132,6 @@ textarea {
   /*background-size: 100% 100%; */
   background-size: cover;
 }
-#ie-background {
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://e32apvl024.oera-t.local:8080/site/21/_public/Nettveiviser/bilder/nvv_back.jpg", sizingMethod="scale");
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://e32apvl024.oera-t.local:8080/site/21/_public/Nettveiviser/bilder/nvv_back.jpg',sizingMethod='scale')";
-}
 a img {
   border: none;
 }
@@ -520,11 +516,11 @@ ul.navbar ol.submenu-two-box > li {
   font-weight: bold;
 }
 .underline-header {
-  background: transparent url("../bilder/dotted-line-lrg.gif") repeat-x left bottom;
+  border-bottom: 2px solid grey;
   padding-bottom: 6px;
 }
 .underline {
-  background: transparent url("../bilder/dotted-line-lrg.gif") repeat-x left bottom;
+  border-bottom: 2px solid grey;
 }
 .text-box:hover {
   background-color: #c30000 !important;
