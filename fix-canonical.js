@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 let files = [];
 
 const getFilesRecursively = (directory) => {
@@ -18,8 +19,6 @@ const siteDir = `${process.cwd()}/static/site`
     .split(path.sep)
     .join(path.posix.sep);
 const siteOrigin = 'https://www.workinnorway.no';
-
-console.log(siteDir);
 
 getFilesRecursively(siteDir);
 
