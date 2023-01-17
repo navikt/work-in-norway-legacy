@@ -6,8 +6,8 @@
     "build": "rm -fr dist && tsc",
     "start": "node dist/server.js",
     "dev": "npm run build && concurrently \"tsc -w\" \"nodemon -w dist dist/server.js\"",
-    "scan-internal": "npx linkinator http://localhost:4090 --skip '^https?://(?!(localhost|www\\.workinnorway\\.no))' --recurse",
-    "scan-all": "npx linkinator http://localhost:4090 --recurse"
+    "scan-internal": "npx linkinator http://localhost:4090 --skip '^https?://(?!(localhost|www\\.workinnorway\\.no))' --recurse --url-rewrite-search \"https://www.workinnorway.no\" --url-rewrite-replace \"http://localhost:4090\"",
+    "scan-all": "npx linkinator http://localhost:4090 --recurse --url-rewrite-search \"https://www.workinnorway.no\" --url-rewrite-replace \"http://localhost:4090\""
   },
   "dependencies": {
     "express": "4.18.2"
