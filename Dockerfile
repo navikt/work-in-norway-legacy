@@ -7,6 +7,5 @@ COPY node_modules /app/node_modules/
 COPY dist /app/dist/
 COPY static /app/static/
 
-# Start app
 EXPOSE 4090
 CMD ["npm", "run", "start"]
