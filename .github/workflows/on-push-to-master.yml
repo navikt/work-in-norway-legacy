@@ -1,0 +1,27 @@
+name: Build and deploy from master
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-image.yml
+  deploy-dev:
+    uses: ./.github/workflows/deploy-to-nais.yml
+    needs: build
+    with:
+      image: ${{ needs.build.outputs.image }}
+      cluster: dev-gcp
+      ingress: https://workinnorway.dev.nav.no
+    secrets:
+      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+  deploy-prod:
+    uses: ./.github/workflows/deploy-to-nais.yml
+    needs: build
+    with:
+      image: ${{ needs.build.outputs.image }}
+      cluster: prod-gcp
+      ingress: https://www.workinnorway.no
+    secrets:
+      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

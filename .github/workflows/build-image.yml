@@ -1,22 +1,15 @@
-name: Build and deploy
+name: Build docker image
 on:
   workflow_call:
-    inputs:
-      cluster:
-        required: true
-        type: string
-      ingress:
-        required: true
-        type: string
-    secrets:
-      NAIS_DEPLOY_APIKEY:
-        required: true
 
 jobs:
-  build-and-deploy:
+  build-image:
+    name: Build docker image
     runs-on: ubuntu-latest
     env:
-      image: ghcr.io/${{ github.repository }}:${{ inputs.cluster }}-${{ github.sha }}
+      image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+    outputs:
+      image: ${{ env.image }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -65,11 +58,3 @@ jobs:
         run: |
           docker build -t ${{ env.image }} .
           docker push ${{ env.image }}
-      - name: Deploy to nais
-        uses: nais/deploy/actions/deploy@v1
-        env:
-          CLUSTER: ${{ inputs.cluster }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          VAR: image=${{ env.image }},ingress=${{ inputs.ingress }}
-          RESOURCE: .nais/config.yml
-

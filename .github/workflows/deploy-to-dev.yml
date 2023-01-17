@@ -1,0 +1,16 @@
+name: Deploy to dev
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-image.yml
+  deploy:
+    uses: ./.github/workflows/deploy-to-nais.yml
+    needs: build
+    with:
+      image: ${{ needs.build.outputs.image }}
+      cluster: dev-gcp
+      ingress: https://workinnorway.dev.nav.no
+    secrets:
+      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

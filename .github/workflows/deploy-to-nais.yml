@@ -1,0 +1,29 @@
+name: Deploy to nais
+on:
+  workflow_call:
+    inputs:
+      image:
+        required: true
+        type: string
+      cluster:
+        required: true
+        type: string
+      ingress:
+        required: true
+        type: string
+    secrets:
+      NAIS_DEPLOY_APIKEY:
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy to nais k8s
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to nais
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          CLUSTER: ${{ inputs.cluster }}
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          VAR: image=${{ env.image }},ingress=${{ inputs.ingress }}
+          RESOURCE: .nais/config.yml
