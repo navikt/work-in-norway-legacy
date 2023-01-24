@@ -672,7 +672,11 @@ ul li {
 }
 .article a {
   text-decoration: none;
+  border-bottom: 1px #007fff solid;
   color: #007fff !important;
+}
+.article a:hover {
+  border-bottom-color: transparent;
 }
 .article p {
   padding-bottom: 0.75em;
