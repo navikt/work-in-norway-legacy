@@ -21,7 +21,7 @@ jobs:
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
-      cluster: prod-gcp
-      ingress: https://www.workinnorway.no
+      cluster: prod
+      ingress: https://workinnorway.external.prod.nav.nais.io
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
