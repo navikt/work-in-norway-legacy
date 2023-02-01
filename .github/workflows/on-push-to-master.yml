@@ -12,7 +12,7 @@ jobs:
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
-      cluster: dev-gcp
+      cluster: dev
       ingress: https://workinnorway.dev.nav.no
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
