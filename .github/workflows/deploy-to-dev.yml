@@ -11,6 +11,5 @@ jobs:
     with:
       image: ${{ needs.build.outputs.image }}
       cluster: dev
-      ingress: https://workinnorway.external.dev.nav.cloud.nais.io
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

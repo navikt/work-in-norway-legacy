@@ -1,0 +1,5 @@
+ingresses:
+  - https://workinnorway.external.dev.nav.cloud.nais.io
+replicas:
+  min: 1
+  max: 1

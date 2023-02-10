@@ -13,7 +13,6 @@ jobs:
     with:
       image: ${{ needs.build.outputs.image }}
       cluster: dev
-      ingress: https://workinnorway.external.dev.nav.cloud.nais.io
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
   deploy-prod:
@@ -22,6 +21,5 @@ jobs:
     with:
       image: ${{ needs.build.outputs.image }}
       cluster: prod
-      ingress: https://workinnorway.external.prod.nav.cloud.nais.io
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

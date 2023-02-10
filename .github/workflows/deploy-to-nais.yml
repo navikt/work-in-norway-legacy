@@ -8,9 +8,6 @@ on:
       cluster:
         required: true
         type: string
-      ingress:
-        required: true
-        type: string
     secrets:
       NAIS_DEPLOY_APIKEY:
         required: true
@@ -28,4 +25,5 @@ jobs:
           CLUSTER: ${{ inputs.cluster }}
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           VAR: image=${{ inputs.image }},ingress=${{ inputs.ingress }}
+          VARS: .nais/vars/vars-${{ inputs.cluster }}.yml
           RESOURCE: .nais/config.yml

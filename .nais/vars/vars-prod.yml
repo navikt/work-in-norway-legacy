@@ -1,0 +1,7 @@
+ingresses:
+  - https://workinnorway.external.prod.nav.cloud.nais.io
+  - https://workinnorway.no
+  - https://www.workinnorway.no
+replicas:
+  min: 2
+  max: 2
