@@ -1,4 +1,5 @@
 import express, { ErrorRequestHandler } from 'express';
+import compression from 'compression';
 
 const app = express();
 const port = 4090;
@@ -26,7 +27,8 @@ app.get('/no', (req, res) => {
 
 app.use(
     '/',
-    express.static(siteBasePath, { maxAge: '1d', extensions: ['html'] })
+    compression(),
+    express.static(siteBasePath, { maxAge: '1h', extensions: ['html'] })
 );
 
 app.get('*', (req, res) => {

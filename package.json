@@ -10,9 +10,11 @@
     "scan-all": "npx linkinator http://localhost:4090 --recurse --url-rewrite-search \"https://www.workinnorway.no\" --url-rewrite-replace \"http://localhost:4090\""
   },
   "dependencies": {
+    "compression": "1.7.4",
     "express": "4.18.2"
   },
   "devDependencies": {
+    "@types/compression": "1.7.2",
     "@types/express": "4.17.17",
     "@types/node": "18.13.0",
     "concurrently": "7.6.0",
