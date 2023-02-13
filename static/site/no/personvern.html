@@ -87,6 +87,14 @@
         <div id="content">
             <div id="top-section">
                 <div class="container">
+                    <nav class="skiplink-container">
+                        <a
+                            class="skiplink"
+                            href="#maincontent"
+                            onclick="scrollToMain(event)"
+                            >Hopp til hovedinnhold</a
+                        >
+                    </nav>
                     <header class="page-header">
                         <a href="Forside" title="Hjem"
                             ><img
@@ -111,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" id="maincontent" tabindex="-1">
                 <nav class="top-menu topmenu-one-level group">
                     <header class="underline header-wrap">
                         <h1 class="top-header">

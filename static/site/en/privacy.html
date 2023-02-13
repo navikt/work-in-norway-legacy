@@ -84,6 +84,14 @@
         <div id="content">
             <div id="top-section">
                 <div class="container">
+                    <nav class="skiplink-container">
+                        <a
+                            class="skiplink"
+                            href="#maincontent"
+                            onclick="scrollToMain(event)"
+                            >Jump to main content</a
+                        >
+                    </nav>
                     <header class="page-header">
                         <a href="Home" title="Home"
                             ><img
@@ -108,7 +116,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" id="maincontent" tabindex="-1">
                 <nav class="top-menu topmenu-one-level group">
                     <header class="underline header-wrap">
                         <h1 class="top-header">Privacy and cookies</h1>

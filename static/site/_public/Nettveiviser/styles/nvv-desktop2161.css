@@ -2,6 +2,28 @@
   display: none;
 }
 
+.skiplink-container {
+  position: absolute;
+}
+
+.skiplink {
+  color: inherit;
+  padding: 0.5rem 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-in;
+}
+
+.skiplink:focus {
+  opacity: 1;
+  background-color: #c30000;
+  pointer-events: auto;
+}
+
+#maincontent {
+  outline: none;
+}
+
 article,
 aside,
 details,
