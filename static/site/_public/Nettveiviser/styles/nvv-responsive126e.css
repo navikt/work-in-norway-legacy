@@ -27,7 +27,7 @@
 /** Colors */
 .bluelink {
     text-decoration: none;
-    color: #007fff;
+    color: #0067c5;
 }
 .bluelink:hover {
     text-decoration: underline;
@@ -561,8 +561,8 @@ TABLET
 }
 .article a {
     text-decoration: none;
-    border-bottom: 1px #007fff solid;
-    color: #007fff;
+    border-bottom: 1px #0067c5 solid;
+    color: #0067c5;
 }
 .article a:hover {
     border-bottom-color: transparent;
@@ -576,7 +576,7 @@ TABLET
     padding-left: 1em;
 }
 .article.article-tips {
-    background-color: #dfded7;
+    background-color: #f1f1f1;
 }
 .about-top-menu .header-wrap {
     margin-bottom: 0;

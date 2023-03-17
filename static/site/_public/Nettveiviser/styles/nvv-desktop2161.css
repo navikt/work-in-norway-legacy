@@ -679,7 +679,7 @@ ul li {
     color: #675c53 !important;
 }
 .article-tips {
-    background: #dfded7;
+    background: #f1f1f1;
     margin: 0 0 19px;
 }
 .to-know-article {
@@ -697,8 +697,8 @@ ul li {
 }
 .article a {
     text-decoration: none;
-    border-bottom: 1px #007fff solid;
-    color: #007fff !important;
+    border-bottom: 1px #0067c5 solid;
+    color: #0067c5 !important;
 }
 .article a:hover {
     border-bottom-color: transparent;
