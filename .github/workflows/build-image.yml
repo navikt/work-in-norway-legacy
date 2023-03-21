@@ -5,6 +5,9 @@ on:
       image:
         description: "Url to docker image"
         value: ${{ jobs.build-image.outputs.image }}
+    secrets:
+      NAIS_WORKLOAD_IDENTITY_PROVIDER:
+        required: true
 
 jobs:
   build-image:
@@ -58,4 +61,6 @@ jobs:
         uses: nais/docker-build-push@v0
         id: docker-push
         with:
-          config: ${{ vars.DOCKER_PUSH_CONFIG }}
+          team: personbruker
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
