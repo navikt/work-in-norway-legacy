@@ -381,56 +381,53 @@ ul.navbar ol.submenu-two-box > li {
     padding: 0 14px 14px 14px;
 }
 .navIcon {
-    background-image: url('../bilder/etat/Navlogo.png');
+    background-image: url('../bilder/etat/nav-logo-red.svg');
     background-repeat: no-repeat;
-    height: 72px;
-    width: 88px;
+    height: 49px;
+    width: 70px;
 }
 .skattIcon {
-    background-image: url('../bilder/etat/skatteetaten.png');
+    background-image: url('../bilder/etat/skatteetaten.svg');
     background-repeat: no-repeat;
-    height: 72px;
-    width: 102px;
+    height: 54px;
+    width: 128px;
 }
 .udiIcon {
-    background-image: url('../bilder/etat/UDI_logo.png');
+    background-image: url('../bilder/etat/udi.svg');
     background-repeat: no-repeat;
-    height: 72px;
-    width: 75px;
+    height: 65px;
+    width: 72px;
 }
 .arbeidtilsIcon {
-    background-image: url('../bilder/etat/arbeidstilsynet_logo.png');
+    background-image: url('../bilder/etat/arbeidstilsynet.svg');
     background-repeat: no-repeat;
-    height: 72px;
-    width: 145px;
+    height: 68px;
+    width: 148px;
 }
 .politiIcon {
-    background-image: url('../bilder/etat/ident-politiet.png');
+    background-image: url('../bilder/etat/politiet.svg');
     background-repeat: no-repeat;
-    height: 72px;
-    width: 143px;
+    height: 78px;
+    width: 158px;
 }
 .no-topsubmenu {
     margin-bottom: 22px;
 }
-.profiles-container span {
-    display: inline-block;
-    *display: inline;
-    /* IE7 inline-block hack */
-    *zoom: 1;
-    margin-right: 40px;
-    font-weight: bold;
-    float: left;
-}
 .profiles-container {
-    margin: 3px 0 0 4px;
-    width: 100%;
+    margin: 0 1rem;
+}
+.profiles-container span {
+    font-weight: bold;
+}
+.profiles-container ul {
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
 .profiles-container li {
-    margin: 0 50px 0 0;
-}
-.profiles-container li:last-child {
-    margin: 0;
+    display: flex;
+    align-items: center;
 }
 .profiles-container li a {
     display: block;
