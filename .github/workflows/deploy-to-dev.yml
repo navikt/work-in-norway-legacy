@@ -5,6 +5,8 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build-image.yml
+    secrets:
+      NAIS_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
   deploy:
     uses: ./.github/workflows/deploy-to-nais.yml
     needs: build
@@ -13,4 +15,3 @@ jobs:
       cluster: dev
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-      NAIS_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
