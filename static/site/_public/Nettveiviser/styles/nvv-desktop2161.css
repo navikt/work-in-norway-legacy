@@ -381,16 +381,16 @@ ul.navbar ol.submenu-two-box > li {
     padding: 0 14px 14px 14px;
 }
 .navIcon {
-    background-image: url('../bilder/etat/nav-logo-red.svg');
+    background-image: url('../bilder/etat/nav.svg');
     background-repeat: no-repeat;
-    height: 49px;
-    width: 70px;
+    height: 72px;
+    width: 72px;
 }
 .skattIcon {
     background-image: url('../bilder/etat/skatteetaten.svg');
     background-repeat: no-repeat;
-    height: 54px;
-    width: 128px;
+    height: 56px;
+    width: 132px;
 }
 .udiIcon {
     background-image: url('../bilder/etat/udi.svg');
