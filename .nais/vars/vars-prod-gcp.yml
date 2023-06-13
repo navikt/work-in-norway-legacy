@@ -1,5 +1,8 @@
 ingresses:
   - https://workinnorway.intern.nav.no
+  - https://workinnorway.external.prod-gcp.nav.cloud.nais.io
+  - https://workinnorway.no
+  - https://www.workinnorway.no
 replicas:
   min: 2
   max: 2
