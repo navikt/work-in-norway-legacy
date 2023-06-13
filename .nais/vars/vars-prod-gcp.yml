@@ -1,5 +1,5 @@
 ingresses:
-  - https://www.intern.nav.no/workinnorway
+  - https://workinnorway.intern.nav.no
 replicas:
   min: 2
   max: 2
