@@ -25,3 +25,11 @@ jobs:
       cluster: prod
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+  deploy-prod-gcp:
+    uses: ./.github/workflows/deploy-to-nais.yml
+    needs: build
+    with:
+      image: ${{ needs.build.outputs.image }}
+      cluster: prod-gcp
+    secrets:
+      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

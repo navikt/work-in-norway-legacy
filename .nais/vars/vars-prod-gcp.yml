@@ -1,0 +1,7 @@
+ingresses:
+  - https://www.intern.nav.no/workinnorway
+  - https://workinnorway.no
+  - https://www.workinnorway.no
+replicas:
+  min: 2
+  max: 2
