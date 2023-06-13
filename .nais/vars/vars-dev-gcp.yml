@@ -1,5 +1,6 @@
 ingresses:
   - https://workinnorway.external.dev.nav.cloud.nais.io
+  - https://workinnorway.ekstern.dev.nav.no
 replicas:
   min: 1
   max: 1

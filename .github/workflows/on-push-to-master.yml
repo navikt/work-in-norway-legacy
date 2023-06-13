@@ -14,15 +14,7 @@ jobs:
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
-      cluster: dev
-    secrets:
-      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-  deploy-prod:
-    uses: ./.github/workflows/deploy-to-nais.yml
-    needs: build
-    with:
-      image: ${{ needs.build.outputs.image }}
-      cluster: prod
+      cluster: dev-gcp
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
   deploy-prod-gcp:

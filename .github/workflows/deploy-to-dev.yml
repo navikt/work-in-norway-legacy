@@ -12,6 +12,6 @@ jobs:
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
-      cluster: dev
+      cluster: dev-gcp
     secrets:
       NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}

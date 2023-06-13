@@ -1,5 +1,5 @@
 ingresses:
-  - https://workinnorway.intern.nav.no
+  - https://workinnorway.ekstern.nav.no
   - https://workinnorway.external.prod-gcp.nav.cloud.nais.io
   - https://workinnorway.no
   - https://www.workinnorway.no
