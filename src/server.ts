@@ -45,13 +45,9 @@ app.use(((err, req, res, _) => {
 
     const statusCode = status || 500;
 
-    res.status(statusCode);
-
-    if (statusCode < 500) {
-        return res.sendFile(clientErrorPage);
-    }
-
-    return res.sendFile(serverErrorPage);
+    return res
+        .status(statusCode)
+        .sendFile(statusCode >= 500 ? serverErrorPage : clientErrorPage);
 }) as ErrorRequestHandler);
 
 const server = app.listen(port, () => {
