@@ -13,18 +13,20 @@ jobs:
     secrets:
       NAIS_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
   deploy-dev:
+    permissions:
+      contents: "read"
+      id-token: "write"
     uses: ./.github/workflows/deploy-to-nais.yml
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
       cluster: dev-gcp
-    secrets:
-      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
   deploy-prod-gcp:
+    permissions:
+      contents: "read"
+      id-token: "write"
     uses: ./.github/workflows/deploy-to-nais.yml
     needs: build
     with:
       image: ${{ needs.build.outputs.image }}
       cluster: prod-gcp
-    secrets:
-      NAIS_DEPLOY_APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
