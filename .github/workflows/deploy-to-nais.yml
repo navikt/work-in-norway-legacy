@@ -20,10 +20,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
       - name: Deploy to nais
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: ${{ inputs.cluster }}
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           VAR: image=${{ inputs.image }}
           VARS: .nais/vars/vars-${{ inputs.cluster }}.yml
           RESOURCE: .nais/config.yml
