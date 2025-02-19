@@ -1,28 +1,28 @@
 name: Deploy to nais
 on:
-  workflow_call:
-    inputs:
-      image:
-        required: true
-        type: string
-      cluster:
-        required: true
-        type: string
+    workflow_call:
+        inputs:
+            image:
+                required: true
+                type: string
+            cluster:
+                required: true
+                type: string
 
 jobs:
-  deploy:
-    name: Deploy to nais k8s
-    runs-on: ubuntu-latest
-    permissions:
-      contents: "read"
-      id-token: "write"
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Deploy to nais
-        uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: ${{ inputs.cluster }}
-          VAR: image=${{ inputs.image }}
-          VARS: .nais/vars/vars-${{ inputs.cluster }}.yml
-          RESOURCE: .nais/config.yml
+    deploy:
+        name: Deploy to nais k8s
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+            - name: Deploy to nais
+              uses: nais/deploy/actions/deploy@v2
+              env:
+                  CLUSTER: ${{ inputs.cluster }}
+                  VAR: image=${{ inputs.image }}
+                  VARS: .nais/vars/vars-${{ inputs.cluster }}.yml
+                  RESOURCE: .nais/config.yml

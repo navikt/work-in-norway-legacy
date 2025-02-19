@@ -1,66 +1,66 @@
 name: Build docker image
 on:
-  workflow_call:
-    outputs:
-      image:
-        description: "Url to docker image"
-        value: ${{ jobs.build-image.outputs.image }}
-    secrets:
-      NAIS_WORKLOAD_IDENTITY_PROVIDER:
-        required: true
+    workflow_call:
+        outputs:
+            image:
+                description: 'Url to docker image'
+                value: ${{ jobs.build-image.outputs.image }}
+        secrets:
+            NAIS_WORKLOAD_IDENTITY_PROVIDER:
+                required: true
 
 jobs:
-  build-image:
-    name: Build docker image
-    permissions:
-      contents: "read"
-      id-token: "write"
-    runs-on: ubuntu-latest
-    outputs:
-      image: ${{ steps.docker-push.outputs.image }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm ci
-      - name: Build application
-        run: npm run build
-      - name: Start test server
-        run: |
-          npm run start &
-          sleep 5
-      - name: Scan for broken internal links
-        uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: 'http://localhost:4090'
-          concurrency: 100
-          markdown: false
-          skip: '^https?://(?!(localhost|www\.workinnorway\.no))'
-          recurse: true
-          verbosity: error
-          urlRewriteSearch: 'https://www.workinnorway.no'
-          urlRewriteReplace: 'http://localhost:4090'
-      - name: Scan for broken external links
-        uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: 'http://localhost:4090'
-          concurrency: 100
-          markdown: false
-          recurse: true
-          verbosity: error
-          urlRewriteSearch: 'https://www.workinnorway.no'
-          urlRewriteReplace: 'http://localhost:4090'
-          timeout: 10000
-        continue-on-error: true
-      - name: Build and push docker image
-        uses: nais/docker-build-push@v0
-        id: docker-push
-        with:
-          team: personbruker
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+    build-image:
+        name: Build docker image
+        permissions:
+            contents: read
+            id-token: write
+        runs-on: ubuntu-latest
+        outputs:
+            image: ${{ steps.docker-push.outputs.image }}
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v4
+            - name: Setup node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: '20'
+                  cache: 'npm'
+            - name: Install dependencies
+              run: npm ci
+            - name: Build application
+              run: npm run build
+            - name: Start test server
+              run: |
+                  npm run start &
+                  sleep 5
+            - name: Scan for broken internal links
+              uses: JustinBeckwith/linkinator-action@v1
+              with:
+                  paths: 'http://localhost:4090'
+                  concurrency: 100
+                  markdown: false
+                  skip: '^https?://(?!(localhost|www\.workinnorway\.no))'
+                  recurse: true
+                  verbosity: error
+                  urlRewriteSearch: 'https://www.workinnorway.no'
+                  urlRewriteReplace: 'http://localhost:4090'
+            - name: Scan for broken external links
+              uses: JustinBeckwith/linkinator-action@v1
+              with:
+                  paths: 'http://localhost:4090'
+                  concurrency: 100
+                  markdown: false
+                  recurse: true
+                  verbosity: error
+                  urlRewriteSearch: 'https://www.workinnorway.no'
+                  urlRewriteReplace: 'http://localhost:4090'
+                  timeout: 10000
+              continue-on-error: true
+            - name: Build and push docker image
+              uses: nais/docker-build-push@v0
+              id: docker-push
+              with:
+                  team: personbruker
+                  project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+                  identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
