@@ -31,7 +31,7 @@ app.use(
     express.static(siteBasePath, { maxAge: '1h', extensions: ['html'] })
 );
 
-app.get('*', (req, res) => {
+app.get( '', (req, res) => {
     console.log(`Not found: ${req.url}`);
     return res.status(404).sendFile(clientErrorPage);
 });
