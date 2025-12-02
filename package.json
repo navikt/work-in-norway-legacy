@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "compression": "1.8.1",
-    "express": "5.1.0"
+    "express": "5.2.0"
   },
   "devDependencies": {
     "@types/compression": "1.8.1",
