@@ -20,9 +20,9 @@ jobs:
             image: ${{ steps.docker-push.outputs.image }}
         steps:
             - name: Checkout repo
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
             - name: Setup node.js
-              uses: actions/setup-node@v4
+              uses: actions/setup-node@v6
               with:
                   node-version: 22
                   cache: 'npm'
@@ -37,7 +37,7 @@ jobs:
                   npm run start &
                   sleep 5
             - name: Scan for broken internal links
-              uses: JustinBeckwith/linkinator-action@v1
+              uses: JustinBeckwith/linkinator-action@v2
               with:
                   paths: 'http://localhost:4090'
                   concurrency: 100
@@ -48,7 +48,7 @@ jobs:
                   urlRewriteSearch: 'https://www.workinnorway.no'
                   urlRewriteReplace: 'http://localhost:4090'
             - name: Scan for broken external links
-              uses: JustinBeckwith/linkinator-action@v1
+              uses: JustinBeckwith/linkinator-action@v2
               with:
                   paths: 'http://localhost:4090'
                   concurrency: 100
