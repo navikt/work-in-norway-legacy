@@ -1,6 +1,5 @@
 name: Build and deploy from main and create a new release
 on:
-    workflow_dispatch:
     push:
         branches:
             - 'main'
