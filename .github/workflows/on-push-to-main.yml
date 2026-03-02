@@ -1,6 +1,5 @@
 name: Build and deploy from main and create a new release
 on:
-    workflow_dispatch:
     push:
         branches:
             - 'main'
@@ -14,17 +13,6 @@ jobs:
         uses: ./.github/workflows/build-image.yml
         secrets:
             NAIS_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
-
-    deploy-dev:
-        name: Deploy to dev
-        permissions:
-            contents: read
-            id-token: write
-        uses: ./.github/workflows/deploy-to-nais.yml
-        needs: build
-        with:
-            image: ${{ needs.build.outputs.image }}
-            cluster: dev-gcp
 
     deploy-prod-gcp:
         name: Deploy to prod-gcp
